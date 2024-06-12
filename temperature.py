@@ -90,10 +90,14 @@ def main():
         figsize=(16, 9),
         gridspec_kw={"left": 0.08, "right": 0.99, "top": 0.99, "bottom": 0.1},
     )
-    ax.plot(times, hist, color="blue", label="average", linestyle="solid")
-    ax.plot(times, maximum, color="red", label="maximum", linestyle="dashed")
-    ax.legend(loc="best")
-    ax.set_ylabel("Temperature (MeV)")
+    # ax.plot(times, hist, color="blue", label="average", linestyle="solid")
+    ax.plot(times, maximum, color="black", label="maximum", linestyle="solid")
+    # ax.axvline(x=14, color="red", linestyle="dashed")
+    # ax.text(x=14.01, y=0.16, s=r"$\tau=14.0$ fm$/c$", color="red")
+    ax.text(x=0.0, y=0.17, s=r"$T_{\mathrm{cut}}=0.16$ GeV", color="red")
+    ax.axhline(y=0.16, color="red", linestyle="dashed")
+    # ax.legend(loc="best")
+    ax.set_ylabel("Maximum Temperature (MeV)")
     ax.set_xlabel(r"$\tau$ (fm$/c$)")
     plt.show()
 
